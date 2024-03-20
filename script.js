@@ -18,6 +18,28 @@ const books = [TheFinalEmpire, Warbreaker, TheGraveyardBook];
 
 const libraryEl = document.querySelector('.library');
 
+// MODAL
+const addBtnEl = document.getElementById('addBtn');
+const modalEl = document.querySelector('.book-modal');
+const formEl = document.querySelector('form');
+const closeBtn = document.querySelector('#closeBtn');
+const confirmBtn = modalEl.querySelector('#confirmBtn');
+
+const titleInput = document.querySelector('#book-title');
+const authorInput = document.querySelector('#book-author');
+const pagesInput = document.querySelector('#book-pages');
+const readedInput = document.querySelector('#book-readed');
+
+addBtnEl.addEventListener('click', () => {
+  modalEl.showModal();
+});
+
+closeBtn.addEventListener('click', () => {
+  modalEl.close();
+});
+
+confirmBtn.addEventListener('click', confirmBook);
+
 displayBooks();
 
 function Book(title, author, pages, read) {
@@ -51,4 +73,22 @@ function displayBooks() {
   }
 
   libraryEl.innerHTML += html;
+}
+
+function addBook(title, author, pages, readed) {
+  books.push(new Book(title, author, pages, readed));
+  displayBooks();
+}
+
+function confirmBook(e) {
+  e.preventDefault();
+  const title = titleInput.value;
+  const author = authorInput.value;
+  const pages = pagesInput.value;
+  const read = readedInput.checked;
+
+  addBook(title, author, pages, read);
+  modalEl.close();
+
+  formEl.reset();
 }
