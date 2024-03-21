@@ -68,11 +68,19 @@ function displayBooks() {
                     ? '<span class="check">✔</span>'
                     : '<span class="uncheck">✖</span>'
                 }</p>
+                <div class="bookBtns">
+                  <button data-index="${books.indexOf(
+                    books[book]
+                  )}" class="deleteBtn">Delete</button>
+                </div>
             </div>
     `;
   }
 
   libraryEl.innerHTML += html;
+
+  const deleteBtns = document.querySelectorAll('.deleteBtn');
+  deleteBtns.forEach(btn => btn.addEventListener('click', deleteBook));
 }
 
 function addBook(title, author, pages, readed) {
@@ -80,7 +88,7 @@ function addBook(title, author, pages, readed) {
   displayBooks();
 }
 
-function confirmBook(e) {
+function confirmBook() {
   if (formEl.checkValidity()) {
     const title = titleInput.value;
     const author = authorInput.value;
@@ -92,4 +100,9 @@ function confirmBook(e) {
     modalEl.close();
     formEl.reset();
   }
+}
+
+function deleteBook(e) {
+  books.splice(e.target.dataset.index, 1);
+  displayBooks();
 }
