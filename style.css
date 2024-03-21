@@ -76,6 +76,20 @@ main {
   max-width: 70%;
 }
 
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaf3eb;
+  color: #091b0a;
+  font-size: 3rem;
+}
+
+.logo {
+  width: 10rem;
+  fill: #d56e6b;
+}
+
 dialog {
   width: 40rem;
   margin: 10rem auto;
