@@ -90,6 +90,23 @@ header {
   fill: #d56e6b;
 }
 
+.addLogo {
+  width: 2rem;
+  fill: #2d8633;
+}
+
+#addBtn {
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-radius: 9px;
+  border: none;
+  background-color: #eaf3eb;
+  margin: 1.6rem 0;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+}
+
 dialog {
   width: 40rem;
   margin: 10rem auto;
@@ -101,7 +118,7 @@ dialog {
   border-style: none;
   color: #091b0a;
   font-weight: 500;
-  box-shadow: 0 2.4rem 4rem #0000004b;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
 }
 
 #closeBtn {
