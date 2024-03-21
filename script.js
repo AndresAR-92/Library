@@ -81,14 +81,15 @@ function addBook(title, author, pages, readed) {
 }
 
 function confirmBook(e) {
-  e.preventDefault();
-  const title = titleInput.value;
-  const author = authorInput.value;
-  const pages = pagesInput.value;
-  const read = readedInput.checked;
+  if (formEl.checkValidity()) {
+    const title = titleInput.value;
+    const author = authorInput.value;
+    const pages = pagesInput.value;
+    const read = readedInput.checked;
 
-  addBook(title, author, pages, read);
-  modalEl.close();
+    addBook(title, author, pages, read);
 
-  formEl.reset();
+    modalEl.close();
+    formEl.reset();
+  }
 }

@@ -16,11 +16,11 @@
           <ul class="book-form">
             <li class="form-el el-1">
               <label for="book-title">Title</label>
-              <input autofocus id="book-title" type="text" />
+              <input id="book-title" type="text" required />
             </li>
             <li class="form-el el-2">
               <label for="book-author">Author</label>
-              <input id="book-author" type="text" />
+              <input id="book-author" type="text" required />
             </li>
             <li class="form-el el-3">
               <label for="book-pages">Pages</label>
@@ -33,7 +33,12 @@
           </ul>
           <div>
             <button id="confirmBtn" value="ok">Confirm</button>
-            <button id="cancelBtn" formmethod="dialog" value="cancel">
+            <button
+              id="cancelBtn"
+              formmethod="dialog"
+              value="cancel"
+              formnovalidate
+            >
               Cancel
             </button>
           </div>
