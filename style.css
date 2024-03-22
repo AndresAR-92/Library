@@ -1,0 +1,273 @@
+/*
+--- 01 TYPOGRAPHY SYSTEM
+
+- Font sizes (px)
+10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+
+- Font weights
+Default: 400
+Medium: 500
+Semi-bold: 600
+Bold: 700
+
+- Line heights
+Default: 1
+Small: 1.05
+Medium: 1.2
+Paragraph default: 1.6
+Large: 1.8
+
+- Letter spacing
+-0.5px
+0.75px
+
+--- 02 COLORS
+
+- Primary: #2D8633
+- Tints:
+#eaf3eb
+#d5e7d6
+
+#FFADAB
+#D56E6B
+
+- Shades: 
+#123614
+#560200
+
+- Accents:
+- Greys
+
+#888
+#767676 (lightest grey allowed on #fff)
+#6f6f6f (lightest grey allowed on #fdf2e9)
+#555
+#333
+
+--- 05 SHADOWS
+
+0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+
+--- 06 BORDER-RADIUS
+
+Default: 9px
+Medium: 11px
+
+--- 07 WHITESPACE
+
+- Spacing system (px)
+2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: sans-serif;
+}
+
+main {
+  margin: 0 auto;
+  min-width: 45rem;
+  max-width: 70%;
+}
+
+/* SECCION ENCABEZADO */
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #eaf3eb;
+  color: #091b0a;
+  font-size: 3rem;
+}
+
+.logo {
+  width: 10rem;
+  fill: #d56e6b;
+}
+
+.addLogo {
+  width: 2rem;
+  fill: #2d8633;
+}
+
+#addBtn {
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 9px;
+  border: none;
+  background-color: #eaf3eb;
+  margin: 1.6rem 0;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  position: absolute;
+  top: 90px;
+  left: 40px;
+  z-index: 1;
+  width: 12rem;
+}
+
+/* MODAL */
+
+dialog {
+  width: 40rem;
+  margin: 10rem auto;
+  padding: 1.6rem;
+  font-size: 1.4rem;
+  border-radius: 11px;
+  position: relative;
+  border-style: none;
+  color: #091b0a;
+  font-weight: 500;
+}
+
+#closeBtn {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  padding: 3px 6px;
+  background-color: transparent;
+  border: none;
+  border-radius: 3px;
+}
+
+button {
+  cursor: pointer;
+}
+
+form > div {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+#confirmBtn,
+#cancelBtn {
+  padding: 6px 12px;
+  border-radius: 9px;
+  border: none;
+  background-color: #d5e7d6;
+}
+
+input {
+  height: 2.4rem;
+  border-radius: 9px;
+  border-style: none;
+  border: 1px solid #123614;
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid #215563;
+}
+
+.book-form {
+  list-style: none;
+  margin-top: 0.8rem;
+}
+
+.form-el {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1.2rem;
+  gap: 3px;
+}
+
+.el-4 {
+  flex-direction: row;
+  gap: 1.2rem;
+  align-items: center;
+}
+
+dialog::backdrop {
+  background-image: linear-gradient(45deg, #eaf3eb60, #d5e7d660, #2d863360);
+  opacity: 0.75;
+  backdrop-filter: blur(2px);
+}
+
+/* SECCION LIBROS */
+
+.library {
+  margin-top: 5rem;
+  padding: 8px;
+}
+
+.grid {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, 25rem);
+  gap: 1.2rem;
+}
+
+.book {
+  height: 14rem;
+  background-color: #eaf3eb;
+  color: #091b0a;
+  padding: 1.2rem;
+  font-size: 1.4rem;
+  border-radius: 9px;
+  box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.085);
+  line-height: 1.2;
+  position: relative;
+}
+
+.book::before {
+  content: '';
+  background-color: #d56e6b;
+  height: 100%;
+  width: 7.3px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border-top-left-radius: 9px;
+  border-bottom-left-radius: 9px;
+}
+
+.book-title {
+  margin-top: 0.8rem;
+}
+
+.book p {
+  margin-left: 0.8rem;
+}
+
+.check {
+  color: #2d8633;
+}
+
+.uncheck {
+  color: #d56e6b;
+}
+
+.bookBtns {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.bookBtns button {
+  padding: 5px 10px;
+  border-radius: 9px;
+  border-style: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.deleteBtn {
+  background-color: #d56e6b;
+}
+
+.readedBtn {
+  background-color: #d5e7d6;
+  width: 7rem;
+}

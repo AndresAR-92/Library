@@ -5,7 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Library</title>
     <link rel="stylesheet" href="style.css" />
-    <script src="script.js"></script>
+    <script defer src="script.js"></script>
   </head>
-  <body></body>
+  <body>
+    <header>
+      <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+        <path
+          d="M9 3V18H12V3H9M12 5L16 18L19 17L15 4L12 5M5 5V18H8V5H5M3 19V21H21V19H3Z"
+        />
+      </svg>
+      <h1>My Library</h1>
+    </header>
+    <main>
+      <dialog class="book-modal">
+        <button id="closeBtn">X</button>
+        <form action="">
+          <ul class="book-form">
+            <li class="form-el el-1">
+              <label for="book-title">Title</label>
+              <input id="book-title" type="text" required />
+            </li>
+            <li class="form-el el-2">
+              <label for="book-author">Author</label>
+              <input id="book-author" type="text" required />
+            </li>
+            <li class="form-el el-3">
+              <label for="book-pages">Pages</label>
+              <input id="book-pages" type="number" min="1" max="3000" />
+            </li>
+            <li class="form-el el-4">
+              <label for="book-readed">Readed</label>
+              <input id="book-readed" type="checkbox" />
+            </li>
+          </ul>
+          <div>
+            <button id="confirmBtn" value="ok">Confirm</button>
+            <button
+              id="cancelBtn"
+              formmethod="dialog"
+              value="cancel"
+              formnovalidate
+            >
+              Cancel
+            </button>
+          </div>
+        </form>
+      </dialog>
+      <button id="addBtn">
+        Add Book<svg
+          class="addLogo"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+        >
+          <path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" />
+        </svg>
+      </button>
+      <div class="library grid"></div>
+    </main>
+  </body>
 </html>
