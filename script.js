@@ -75,7 +75,7 @@ function displayBooks() {
                   <button data-index="${books.indexOf(
                     books[book]
                   )}" class="readedBtn">${
-      books[book].read ? 'Uncheck' : 'Check'
+      books[book].read ? 'Unread' : 'Readed'
     }</button>
                 </div>
             </div>

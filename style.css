@@ -239,3 +239,28 @@ dialog::backdrop {
 .uncheck {
   color: #d56e6b;
 }
+
+.bookBtns {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+}
+
+.bookBtns button {
+  padding: 5px 10px;
+  border-radius: 9px;
+  border-style: none;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+.deleteBtn {
+  background-color: #d56e6b;
+}
+
+.readedBtn {
+  background-color: #d5e7d6;
+  width: 7rem;
+}
