@@ -98,15 +98,21 @@ header {
 }
 
 #addBtn {
-  padding: 6px 12px;
+  padding: 5px 10px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   border-radius: 9px;
   border: none;
   background-color: #eaf3eb;
-  margin: 1.6rem 0 1.6rem 16rem;
+  margin: 1.6rem 0;
   box-shadow: 0 2.4rem 4.8rem rgba(0, 0, 0, 0.075);
+  position: absolute;
+  top: 90px;
+  left: 40px;
+  z-index: 1;
+  width: 12rem;
 }
 
 /* MODAL */
@@ -190,6 +196,7 @@ dialog::backdrop {
 /* SECCION LIBROS */
 
 .library {
+  margin-top: 5rem;
   padding: 8px;
 }
 
