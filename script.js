@@ -72,6 +72,11 @@ function displayBooks() {
                   <button data-index="${books.indexOf(
                     books[book]
                   )}" class="deleteBtn">Delete</button>
+                  <button data-index="${books.indexOf(
+                    books[book]
+                  )}" class="readedBtn">${
+      books[book].read ? 'Uncheck' : 'Check'
+    }</button>
                 </div>
             </div>
     `;
@@ -80,7 +85,10 @@ function displayBooks() {
   libraryEl.innerHTML += html;
 
   const deleteBtns = document.querySelectorAll('.deleteBtn');
+  const readBtns = document.querySelectorAll('.readedBtn');
+
   deleteBtns.forEach(btn => btn.addEventListener('click', deleteBook));
+  readBtns.forEach(btn => btn.addEventListener('click', toogleRead));
 }
 
 function addBook(title, author, pages, readed) {
@@ -104,5 +112,10 @@ function confirmBook() {
 
 function deleteBook(e) {
   books.splice(e.target.dataset.index, 1);
+  displayBooks();
+}
+
+function toogleRead(e) {
+  books[e.target.dataset.index].read = !books[e.target.dataset.index].read;
   displayBooks();
 }
